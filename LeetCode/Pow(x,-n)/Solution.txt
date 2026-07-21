@@ -1,0 +1,24 @@
+1class Solution {
+2public:
+3    double myPow(double x, int n) {
+4        
+5        double p=1.0;
+6        long long np=n;
+7        if(np<0)
+8        {
+9            x=1/x;
+10            np=-np;
+11        }
+12        while(np>0)
+13        {
+14            if(np % 2==1)
+15            {
+16                p*=x;
+17            }
+18            x*=x;
+19            np/=2;
+20
+21        }
+22    return p;
+23    }
+24};
