@@ -1,14 +1,29 @@
-[[1], [3], [5], [7], [9], [11], [13], [15], [17], [19],    [21], [23], [25], [27], [29], [31], [33], [35], [37], [39],    [41], [43], [45], [47], [49], [51], [53], [55], [57], [59],    [61], [63], [65], [67], [69], [71], [73], [75], [77], [79],    [81], [83], [85], [87], [89], [91], [93], [95], [97], [99]]
-t: 3
-
-[[1],[3],[5],[6]]
-t: 3
-
-[[1, 3]]
-t: 3
-
-[[1, 3]]
-t: 2
-
-[[1]]
-t: 1
+1class Solution {
+2public:
+3    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+4        int m=matrix.size();
+5        int n=matrix[0].size();
+6        //consider matrix as one long 1 d array
+7        int low=0;
+8        int high=m*n-1;//last element 
+9        while(low<=high)
+10        {
+11            int mid=low+(high-low)/2;//same as low+high/2 just overflow ke wajah se
+12            int row=mid/n;
+13            int col=mid%n;
+14            if(matrix[row][col]==target)
+15            {
+16                return true;
+17            }
+18            if(matrix[row][col]<target)
+19            {
+20                low=mid+1;
+21            }
+22            else
+23            {
+24                high=mid-1;
+25            }
+26        }
+27        return false;
+28    }
+29};
