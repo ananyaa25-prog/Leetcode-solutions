@@ -1,8 +1,25 @@
-[[1,3],[2,6],[8,10],[15,18]]
-[[1,4],[4,5]]
-[[1,1],[2,2],[0,0],[2,3],[1,3],[3,5],[2,3],[3,5]]
-[[2,3],[2,2],[3,3],[1,3],[5,7],[2,2],[4,6]]
-[[1,3],[2,6],[8,10],[8,9],[9,11],[15,18],[2,4],[16,17]]
-[[1012,1136],[1137,1417],[1015,1020]]
-[[1,3]]
-[[1,4],[2,3]]
+1class Solution {
+2public:
+3    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+4           sort(intervals.begin(),intervals.end());
+5           vector<vector<int>> ans;
+6            int i=0;
+7           while(i<intervals.size())
+8           {
+9            vector<int> row;
+10            int start=intervals[i][0];
+11            int end=intervals[i][1];
+12            while(i+1<intervals.size() && intervals[i+1][0]<=end)
+13            {
+14                end=max(end,intervals[i+1][1]);
+15                i++;
+16            }
+17            row.push_back(start);
+18            row.push_back(end);
+19            
+20            ans.push_back(row);
+21            i++;
+22           }  
+23           return ans;                 
+24    }
+25};
