@@ -1,0 +1,24 @@
+1class Solution {
+2public:
+3    int lengthOfLongestSubstring(string s) {
+4         vector<char>ans;
+5         int mc=0;
+6          if(s.empty())
+7            {
+8                return 0;
+9            }
+10        for(int i=0;i<s.size();i++)
+11        {
+12           
+13            while(find(ans.begin(),ans.end(),s[i])!=ans.end())
+14            {
+15                
+16                    ans.erase(ans.begin());
+17            }
+18                    ans.push_back(s[i]);
+19                mc=max(mc,(int)ans.size());
+20        }
+21        return mc;
+22    }
+23};
+24
