@@ -2,16 +2,25 @@
 2public:
 3    void rotate(vector<vector<int>>& matrix) {
 4        int n=matrix.size();
-5       for(int i=0;i<n;i++)
-6       {
-7        for(int j=i+1;j<n;j++)
-8        {
-9             swap(matrix[i][j],matrix[j][i]);
-10        }
-11       } 
-12       for(int i=0;i<n;i++)
-13       {
-14        reverse(matrix[i].begin(),matrix[i].end());
-15       }
-16    }
-17};
+5        for(int i=0;i<n;i++)
+6        {
+7            for(int j=i+1;j<n;j++)
+8            {
+9                swap(matrix[i][j],matrix[j][i]);
+10            }
+11
+12        }
+13        for(int i=0;i<n;i++)
+14        {
+15            reverse(matrix[i].begin(),matrix[i].end());
+16        }
+17        for(int i=0;i<n;i++)
+18        {
+19            for(int j=0;j<n;j++)
+20            {
+21                cout<<matrix[i][j];
+22            }
+23        }
+24        
+25    }
+26};
