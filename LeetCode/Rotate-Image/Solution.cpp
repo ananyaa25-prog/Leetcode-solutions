@@ -14,12 +14,6 @@
 14        {
 15            reverse(matrix[i].begin(),matrix[i].end());
 16        }
-17        for(int i=0;i<n;i++)
-18        {
-19            for(int j=0;j<n;j++)
-20            {
-21                cout<<matrix[i][j];
-22            }
-23        }
-24    }
-25};
+17       
+18    }
+19};
