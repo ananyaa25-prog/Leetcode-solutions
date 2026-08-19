@@ -2,7 +2,7 @@
 2public:
 3    bool containsDuplicate(vector<int>& nums) {
 4        unordered_set<int> st;
-5        st.reserve(nums.size());
+5        
 6        for(int x:nums)
 7        {
 8            if(st.count(x))
