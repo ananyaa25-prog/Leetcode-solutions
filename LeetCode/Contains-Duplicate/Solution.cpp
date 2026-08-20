@@ -4,7 +4,7 @@
 4        unordered_set<int> st;
 5        for(int x:nums)
 6        {
-7            if(st.count(x))
+7            if(st.find(x)!=st.end())
 8            {
 9                return true;
 10            }
