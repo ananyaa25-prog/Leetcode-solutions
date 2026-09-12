@@ -1,23 +1,20 @@
 1class Solution {
 2public:
 3    bool isAnagram(string s, string t) {
-4        vector<int> freq(26,0);
-5        for(char c:s)
-6        {
-7            freq[c-'a']++;
-8        }
-9        for(char c:t)
-10        {
-11            freq[c-'a']--;
-12        }
-13        for(int x:freq)
-14  {
-15    if(x!=0)
-16    {
-17        return false;
-18    }
-19    
-20  }
-21  return true;
-22    }
-23};
+4      unordered_map<char,int> mp1;
+5      unordered_map<char,int>mp2;
+6      for(char x:s)
+7      {
+8        mp1[x]++;
+9      }  
+10      for(char y:t)
+11      {
+12        mp2[y]++;
+13      }
+14      if(mp1==mp2)
+15      {
+16        return true;
+17      }
+18      return false;
+19    }
+20};
