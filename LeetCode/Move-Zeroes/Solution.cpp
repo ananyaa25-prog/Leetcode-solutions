@@ -15,16 +15,16 @@
 15       }
 16      }  
 17      int i=0;
-18      for(int x:v)
-19      {
+18     for(int x:v)
+19     {
 20        nums[i]=x;
 21        i++;
-22      }
-23      while(count!=0)
-24      {
+22     }
+23     while(count!=0)
+24     {
 25        nums[i]=0;
 26        i++;
 27        count--;
-28      } 
+28     }
 29    }
 30};
