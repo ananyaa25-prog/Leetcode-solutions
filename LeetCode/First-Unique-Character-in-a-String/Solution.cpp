@@ -1,10 +1,18 @@
 1class Solution {
 2public:
-3    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-4        for(int i=0;i<n;i++)
-5        {
-6            nums1[m+i]=nums2[i];
-7        }
-8        sort(nums1.begin(),nums1.end());
-9    }
-10};
+3    int firstUniqChar(string s) {
+4        unordered_map<char,int>mp;
+5        for(int i=0;i<s.size();i++)
+6        {
+7            mp[s[i]]++;
+8        }
+9        for(int i=0;i<s.size();i++)
+10        {
+11            if(mp[s[i]]==1)
+12            {
+13                return i;
+14            }
+15        }
+16      return -1;
+17    }
+18};
